@@ -24,7 +24,7 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### ARCHIVO "index.php", el cual debe colocarse en la infraestructura WAMP o XAMP (donde por lo general se colocan los proyectos - carpeta "www")
-
+```
 <?php
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: access");
@@ -101,17 +101,13 @@ if (mysqli_num_rows($sqlMaquinas) > 0) {
     echo json_encode([["success" => 0]]);
 }
 ?>
+```
 
 ### SCRIPT DE LA BASE DE DATOS "maquinas"
 
+```
 CREATE DATABASE IF NOT EXISTS `maquinas` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
 USE `maquinas`;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `maquinas_gimnasio`
---
 
 DROP TABLE IF EXISTS `maquinas_gimnasio`;
 CREATE TABLE IF NOT EXISTS `maquinas_gimnasio` (
@@ -127,3 +123,4 @@ INSERT INTO `maquinas_gimnasio` (`id`, `nombre`, `tipo`, `cantidad`) VALUES
 (2, 'Maquina de pesas', 'Fuerza', 8),
 (3, 'Bicicleta estatica', 'Cardio', 2);
 COMMIT;
+```
